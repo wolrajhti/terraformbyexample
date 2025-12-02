@@ -64,7 +64,7 @@ Optionally you can include an `if` clause in the `for` loop to filter out elemen
 data "aws_regions" "available" {}
 
 locals {
-  regions = [for name in data.aws_regions.available.names : name if != ""]
+  regions = [for name in data.aws_regions.available.names : name if name != ""]
 }
 ```
 
